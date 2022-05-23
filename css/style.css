@@ -178,3 +178,7 @@ a {
     color: #157e00;
     border-color: #157e00;
 }
+
+@media only screen and (max-width: 600px) {
+    
+}

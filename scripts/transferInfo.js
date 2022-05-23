@@ -44,10 +44,10 @@ function renderTransferInfo() {
             <td>
                 <input type="checkbox">
             </td>
-            <td class = "align-center">${transferInfo.id}</td>
-            <td class = "align-center">${transferInfo.senderId}</td>
+            <td class="align-center">${transferInfo.id}</td>
+            <td class="align-center">${transferInfo.senderId}</td>
             <td>${transferInfo.senderName}</td>
-            <td class = "align-center">${transferInfo.recipientId}</td>
+            <td class="align-center">${transferInfo.recipientId}</td>
             <td>${transferInfo.recipientName}</td>
             <td class="align-right">${transferInfo.fee}</td>
             <td class="align-right">${transferInfo.feeAmount}</td>
