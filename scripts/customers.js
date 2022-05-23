@@ -41,26 +41,26 @@ function renderCustomers() {
             <td>
                 <input type="checkbox">
             </td>
-            <td class = "align-center">${customer.id}</td>
+            <td class="align-center">${customer.id}</td>
             <td>${customer.fullName}</td>
             <td>${customer.email}</td>
             <td>${customer.phoneNumber}</td>
             <td>${customer.address}</td>
             <td class="align-right">${customer.balance}</td>
             <td id = "action">
-                <a href="../services/updateInfo.html">
+                <a href="./services/updateInfo.html">
                     <i title="Edit" class="fa-solid fa-user-pen edit"></i>
                 </a>
-                <a href="../services/deposit.html">
+                <a href="./services/deposit.html">
                     <i title="Deposit" class="fa-solid fa-circle-plus deposit"></i>
                 </a>
-                <a href="../services/withdraw.html">
+                <a href="./services/withdraw.html">
                     <i title="Withdraw" class="fa-solid fa-circle-minus withdraw"></i>
                 </a>
-                <a href="../services/transfer.html">
+                <a href="./services/transfer.html">
                     <i title="Transfer" class="fa-solid fa-arrow-right-arrow-left transfer"></i>
                 </a>
-                <a href="../services/remove.html">
+                <a href="./services/remove.html">
                     <i title="Remove" class="fa-solid fa-trash remove"></i>
                 </a>
             </td>
