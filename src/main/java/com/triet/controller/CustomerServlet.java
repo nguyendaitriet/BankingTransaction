@@ -107,7 +107,7 @@ public class CustomerServlet extends HttpServlet {
         long id = Long.parseLong(request.getParameter("id"));
         boolean customerRemoved = customerService.remove(id);
         request.setAttribute("customerRemoved",customerRemoved);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("customer/remove.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("customer/suspend.jsp");
         dispatcher.forward(request, response);
     }
 
