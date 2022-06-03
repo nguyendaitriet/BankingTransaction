@@ -51,8 +51,8 @@
                     >
                 </div>
             </div>
-            <button type="submit" class="btn btn-outline-danger">
-                <i class="fas fa-trash-alt"></i>
+            <button type="submit" class="btn btn-outline-primary">
+                <i class="fas fa-user-edit"></i>
                 Edit
             </button>
         </form>

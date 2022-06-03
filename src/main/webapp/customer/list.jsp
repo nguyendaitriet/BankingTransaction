@@ -60,11 +60,12 @@
                                 <a title="Withdraw" href="/withdraw?id=${customer.getId()}" class="btn btn-outline-success">
                                     <i class="fas fa-minus-circle"></i>
                                 </a>
-                                <a title="Transfer" href="./services/transfer.html" class="btn btn-outline-warning">
-                                    <i class="fas fa-people-arrows"></i>
+                                <a title="Transfer" href="/transfer?id=${customer.getId()}" class="btn btn-outline-warning">
+                                    <i class="fas fa-exchange-alt"></i>
                                 </a>
                                 <a title="Suspend" href="/customers?action=remove&id=${customer.getId()}" class="btn btn-outline-danger">
-                                    <i class="fas fa-ban"></i>                                </a>
+                                    <i class="fas fa-ban"></i>
+                                </a>
                             </td>
                         </tr>
                     </c:forEach>

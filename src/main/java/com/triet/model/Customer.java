@@ -2,6 +2,7 @@ package com.triet.model;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Objects;
 
 public class Customer {
     private long id;
@@ -161,5 +162,18 @@ public class Customer {
                 ", updatedBy=" + updatedBy +
                 ", deleted=" + deleted +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return id == customer.id && createdBy == customer.createdBy && updatedBy == customer.updatedBy && deleted == customer.deleted && Objects.equals(fullName, customer.fullName) && Objects.equals(email, customer.email) && Objects.equals(phone, customer.phone) && Objects.equals(address, customer.address) && Objects.equals(balance, customer.balance) && Objects.equals(createdAt, customer.createdAt) && Objects.equals(updatedAt, customer.updatedAt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, fullName, email, phone, address, balance, createdAt, createdBy, updatedAt, updatedBy, deleted);
     }
 }

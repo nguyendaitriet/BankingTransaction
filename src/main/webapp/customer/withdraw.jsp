@@ -49,8 +49,8 @@
           <input type="number" class="form-control" id="amount" name="amount" value="0">
         </div>
       </div>
-      <button type="submit" class="btn btn-outline-secondary">
-        <i class="fas fa-plus-circle"></i>
+      <button type="submit" class="btn btn-outline-success">
+        <i class="fas fa-minus-circle"></i>
         Withdraw
       </button>
     </form>

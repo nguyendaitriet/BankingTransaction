@@ -20,7 +20,7 @@ public class DepositService implements IDepositService {
         statement.setLong(2, id);
         statement.execute();
         message = statement.getString(3);
-        return statement.getInt(4) > 0;
+        return statement.getBoolean(4);
     }
 
     @Override

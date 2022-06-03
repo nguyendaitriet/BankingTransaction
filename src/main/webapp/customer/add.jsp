@@ -43,7 +43,10 @@
                         <input type="text" class="form-control" id="address" name="address">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-outline-primary">Create</button>
+                <button type="submit" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-plus"></i>
+                    Create
+                </button>
             </form>
         </div>
     </div>

@@ -9,19 +9,20 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-public class WithdrawService implements IWithdrawService{
-
+public class TransferService implements ITransferService{
     public static String message;
 
     @Override
-    public boolean withdraw(BigDecimal amount, long id) throws SQLException {
+    public boolean transfer(BigDecimal amount, long senderId, long recipientId) throws SQLException {
         Connection connection = MySQLConnUtils.getSqlConnection();
-        CallableStatement statement = connection.prepareCall("{CALL sp_withdraw_transaction(?, ?, ?, ?)}");
+        CallableStatement statement = connection.prepareCall("{CALL sp_transfer_transaction(?, ?, ?, ?, ?, ?)}");
         statement.setBigDecimal(1, amount);
-        statement.setLong(2, id);
+        statement.setLong(2, senderId);
+        statement.setLong(3, recipientId);
         statement.execute();
-        message = statement.getString(3);
-        return statement.getBoolean(4);
+        statement.registerOutParameter(6, java.sql.Types.INTEGER);
+        message = statement.getString(4);
+        return statement.getBoolean(5);
     }
 
     @Override
@@ -40,7 +41,7 @@ public class WithdrawService implements IWithdrawService{
     }
 
     @Override
-    public boolean update(Transfer transfer) {
+    public boolean update(Transfer transfer) throws SQLException {
         return false;
     }
 
@@ -48,4 +49,6 @@ public class WithdrawService implements IWithdrawService{
     public boolean remove(long id) throws SQLException {
         return false;
     }
+
+
 }

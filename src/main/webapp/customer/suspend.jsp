@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-outline-danger">
-                    <i class="fas fa-trash-alt"></i>
+                    <i class="fas fa-ban"></i>
                     Suspend
                 </button>
             </form>
@@ -62,13 +62,13 @@
         <c:when test="${customerRemoved}">
             <div class="fixed-bottom alert alert-success alert-dismissible">
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                <strong>Remove customer successfully!</strong>
+                <strong>Suspend customer successfully!</strong>
             </div>
         </c:when>
         <c:when test="${customerRemoved == false}">
             <div class="fixed-bottom alert alert-danger alert-dismissible">
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                <strong>Failed to remove customer!</strong>
+                <strong>Failed to suspend customer!</strong>
             </div>
         </c:when>
     </c:choose>

@@ -45,6 +45,7 @@ public class DepositServlet extends HttpServlet {
         long amount = Long.parseLong(request.getParameter("amount"));
         BigDecimal transactionAmount = BigDecimal.valueOf(amount);
         try {
+
             boolean deposited = depositService.deposit(transactionAmount,id);
             request.setAttribute("deposited",deposited);
 
