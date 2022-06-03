@@ -16,12 +16,12 @@ public class WithdrawService implements IWithdrawService{
     @Override
     public boolean withdraw(BigDecimal amount, long id) throws SQLException {
         Connection connection = MySQLConnUtils.getSqlConnection();
-        CallableStatement statement = connection.prepareCall("{CALL sp_withdraw_transaction(?, ?, ?)}");
+        CallableStatement statement = connection.prepareCall("{CALL sp_withdraw_transaction(?, ?, ?, ?)}");
         statement.setBigDecimal(1, amount);
         statement.setLong(2, id);
-        boolean withdrew = statement.executeUpdate() > 0;
+        statement.execute();
         message = statement.getString(3);
-        return withdrew;
+        return statement.getInt(4) > 0;
     }
 
     @Override

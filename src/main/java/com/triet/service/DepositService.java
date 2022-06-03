@@ -15,13 +15,12 @@ public class DepositService implements IDepositService {
 
     public boolean deposit(BigDecimal amount, long id) throws SQLException {
         Connection connection = MySQLConnUtils.getSqlConnection();
-        CallableStatement statement = connection.prepareCall("{CALL sp_deposit_transaction(?, ?, ?)}");
+        CallableStatement statement = connection.prepareCall("{CALL sp_deposit_transaction(?, ?, ?, ?)}");
         statement.setBigDecimal(1, amount);
         statement.setLong(2, id);
-        System.out.println(statement);
-        boolean deposited = statement.execute();
+        statement.execute();
         message = statement.getString(3);
-        return deposited;
+        return statement.getInt(4) > 0;
     }
 
     @Override
