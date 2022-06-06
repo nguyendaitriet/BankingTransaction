@@ -1,7 +1,6 @@
 package com.triet.service;
 
 import com.triet.model.Customer;
-
 import java.sql.SQLException;
 import java.util.List;
 

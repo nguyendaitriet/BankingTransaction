@@ -2,7 +2,6 @@ package com.triet.service;
 
 import com.triet.model.Transfer;
 import com.triet.utils.MySQLConnUtils;
-
 import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -15,12 +14,11 @@ public class TransferService implements ITransferService{
     @Override
     public boolean transfer(BigDecimal amount, long senderId, long recipientId) throws SQLException {
         Connection connection = MySQLConnUtils.getSqlConnection();
-        CallableStatement statement = connection.prepareCall("{CALL sp_transfer_transaction(?, ?, ?, ?, ?, ?)}");
+        CallableStatement statement = connection.prepareCall("{CALL sp_transfer_transaction(?, ?, ?, ?, ?)}");
         statement.setBigDecimal(1, amount);
         statement.setLong(2, senderId);
         statement.setLong(3, recipientId);
         statement.execute();
-        statement.registerOutParameter(6, java.sql.Types.INTEGER);
         message = statement.getString(4);
         return statement.getBoolean(5);
     }

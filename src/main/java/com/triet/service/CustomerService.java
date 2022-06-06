@@ -2,7 +2,6 @@ package com.triet.service;
 
 import com.triet.model.Customer;
 import com.triet.utils.MySQLConnUtils;
-
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;

@@ -2,7 +2,6 @@ package com.triet.controller;
 
 import com.triet.model.Customer;
 import com.triet.service.*;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

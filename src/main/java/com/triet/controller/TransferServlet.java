@@ -2,7 +2,6 @@ package com.triet.controller;
 
 import com.triet.model.Customer;
 import com.triet.service.*;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -54,14 +53,12 @@ public class TransferServlet extends HttpServlet {
             boolean transferred = transferService.transfer(transactionAmount, senderId, recipientId);
             request.setAttribute("transferred", transferred);
 
-
             Customer sender = customerService.findById(senderId);
             request.setAttribute("sender", sender);
 
             List<Customer> customers = customerService.findAll();
             customers.remove(sender);
             request.setAttribute("recipients", customers);
-
 
             String message = TransferService.message;
             request.setAttribute("message",message);

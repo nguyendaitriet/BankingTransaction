@@ -20,7 +20,7 @@
                         <i class="fa-solid fa-plus"></i>
                         <span>Add New Customer</span>
                     </a>
-                    <a href="/transfers" class="btn btn-outline-light">
+                    <a href="/TransferInfo" class="btn btn-outline-light">
                         <i class="fa fa-history" aria-hidden="true"></i>
                         <span>Transfer money Information</span>
                     </a>
